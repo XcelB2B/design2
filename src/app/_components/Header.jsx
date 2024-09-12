@@ -44,7 +44,7 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-[#2a2a2a] z-[100] start-0 text-white shadow md:inset-x-0 ${
+      className={`bg-[#1A2126] z-[100] start-0 text-white shadow md:inset-x-0 ${
         isSticky
           ? "sticky top-0 md:translate-y-3 md:w-4/5 mx-auto md:rounded-full transition-all duration-300"
           : "w-full"
