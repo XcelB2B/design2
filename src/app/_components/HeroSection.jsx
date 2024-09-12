@@ -82,7 +82,7 @@ const HeroSection = () => {
       </div>
       <div
         ref={scrollRef}
-        className="absolute left-0 right-0 -bottom-3 bg-yellow-500 p-5 overflow-hidden w-4/5 mx-auto rounded-md"
+        className="absolute left-0 right-0 bottom-10 translate-y-1/2 bg-yellow-500 p-4 overflow-hidden w-4/5 mx-auto rounded-md z-10"
       >
         <motion.div
           className="flex items-center justify-start gap-4"
