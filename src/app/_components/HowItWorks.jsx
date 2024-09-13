@@ -28,7 +28,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <div className="bg-white py-16 sm:py-24">
+    <div className="bg-white py-16 sm:py-14">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
         <h2 className="text-3xl sm:text-5xl font-bold text-center mb-8 sm:mb-12 text-gray-900">
           How It <span className="text-yellow-500">Works</span>

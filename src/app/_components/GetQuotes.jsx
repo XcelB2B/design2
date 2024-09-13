@@ -28,9 +28,9 @@ const Excellence = [
 
 const GetQuotes = () => {
   return (
-    <div className="bg-neutral-100 py-10 md:py-20">
+    <div className="bg-neutral-100 py-10 md:py-14">
       <div className="container px-4 relative lg:max-w-screen-xl mx-auto">
-        <div className="relative z-10 py-10">
+        <div className="relative z-10">
           <h2 className="text-3xl md:text-5xl font-bold text-center mb-8 text-gray-800">
             Get Your <span className="text-yellow-500">Free Quote</span>
           </h2>

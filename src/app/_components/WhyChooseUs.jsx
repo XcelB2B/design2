@@ -46,7 +46,7 @@ export default function WhyChooseUs() {
 
   return (
     <div
-      className="relative overflow-hidden bg-neutral-100 py-10 md:py-20"
+      className="relative overflow-hidden bg-neutral-100 py-10 md:py-14"
       ref={ref}
     >
       <div className="container mx-auto px-4">

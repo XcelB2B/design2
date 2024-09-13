@@ -61,7 +61,7 @@ const WhatWeOffer = () => {
   };
 
   return (
-    <div className="bg-white py-16 sm:py-24" ref={ref}>
+    <div className="bg-white py-16 sm:py-14" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-4 text-gray-900">
           What We <span className="text-yellow-500">Offer</span>
