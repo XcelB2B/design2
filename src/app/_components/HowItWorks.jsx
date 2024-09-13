@@ -62,13 +62,21 @@ export default function HowItWorks() {
           </div>
           {/* how it works image */}
           <div className="w-full lg:w-1/2">
-            <Image
-              src="/images/how-it-work.jpg"
-              width={500}
-              height={500}
-              alt="How It Works"
-              className="rounded shadow-lg object-cover w-full h-auto"
-            />
+            <div className="relative">
+              <Image
+                src="/images/how-it-work.jpg"
+                width={600}
+                height={600}
+                alt="How Our Construction Process Works"
+                className="rounded-lg object-cover w-full h-auto transition-all duration-300 hover:filter hover:brightness-110"
+              />
+              <div className="absolute inset-0 border-8 border-yellow-500 rounded-lg transform -rotate-3 transition-all duration-300 group-hover:rotate-0"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/20 to-transparent rounded-lg"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/70 to-transparent rounded-b-lg"></div>
+              <div className="absolute bottom-4 left-4 text-white text-xl font-bold">
+                Construction Process
+              </div>
+            </div>
           </div>
         </div>
       </div>
