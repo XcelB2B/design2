@@ -46,7 +46,7 @@ export default function WhyChooseUs() {
 
   return (
     <div
-      className="relative overflow-hidden bg-yellow-50 py-10 md:py-20"
+      className="relative overflow-hidden bg-neutral-100 py-10 md:py-20"
       ref={ref}
     >
       <div className="container mx-auto px-4">
@@ -64,7 +64,7 @@ export default function WhyChooseUs() {
           {countUp.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-lg p-8 text-center w-64"
+              className="bg-white rounded-md shadow-lg p-8 text-center w-64"
             >
               <h3 className="text-4xl font-bold text-yellow-500 mb-2">
                 <CountUp end={item.end} />
@@ -80,7 +80,7 @@ export default function WhyChooseUs() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center border-none"
+              className="bg-white rounded-md shadow-lg p-6 flex flex-col items-center text-center border-none"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)",

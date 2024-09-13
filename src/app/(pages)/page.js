@@ -1,13 +1,13 @@
 import HeroSection from "../_components/HeroSection";
+import HowItWorks from "../_components/HowItWorks";
 import WhyChooseUs from "../_components/WhyChooseUs";
-// import OurServices from "../_components/OurServices";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
       <WhyChooseUs />
-      {/* <OurServices /> */}
+      <HowItWorks />
     </>
   );
 }
