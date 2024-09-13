@@ -47,10 +47,12 @@ const HeroSection = () => {
       <Image
         src="/images/hero-image.jpg"
         alt="Hero Image"
-        layout="fill"
-        objectFit="cover"
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: "cover",
+        }}
         className="filter brightness-50"
-        priority
       />
       <div className="absolute inset-0 flex flex-col md:flex-row justify-center items-center text-white p-4 sm:p-6 md:p-10 lg:p-20">
         <div className="flex flex-col justify-center items-start w-full md:w-[40%] mb-8 md:mb-0">
