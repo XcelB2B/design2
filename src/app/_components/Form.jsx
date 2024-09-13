@@ -40,7 +40,9 @@ const Form = ({ title, buttonText }) => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <h3 className="text-2xl font-semibold mb-6 text-gray-800">{title}</h3>
+      <h3 className="text-2xl font-semibold mb-6 text-gray-800">
+        {title || ""}
+      </h3>
       {inputFields.map((field) => (
         <div key={field.name}>
           <Label htmlFor={field.name}>{field.label}</Label>
@@ -82,7 +84,7 @@ const Form = ({ title, buttonText }) => {
           type="submit"
           className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-105"
         >
-          {buttonText}
+          {buttonText || "Submit"}
         </Button>
       </div>
     </form>
