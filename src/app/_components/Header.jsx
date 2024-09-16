@@ -83,7 +83,7 @@ const Header = () => {
             isOpen={activeDropdown === "about"}
             toggleDropdown={() => toggleDropdown("about")}
             items={[
-              { href: "/about", label: "About Page" },
+              { href: "/about", label: "About" },
               { href: "/faq", label: "FAQ" },
             ]}
           />
@@ -92,7 +92,7 @@ const Header = () => {
             isOpen={activeDropdown === "services"}
             toggleDropdown={() => toggleDropdown("services")}
             items={[
-              { href: "/services", label: "Services Page" },
+              { href: "/services", label: "Services" },
               { href: "/equipment", label: "Equipment" },
             ]}
           />
@@ -129,7 +129,7 @@ const Header = () => {
             isOpen={activeDropdown === "about"}
             toggleDropdown={() => toggleDropdown("about")}
             items={[
-              { href: "/about", label: "About Page" },
+              { href: "/about", label: "About" },
               { href: "/faq", label: "FAQ" },
             ]}
             toggleMobileMenu={toggleMobileMenu}
@@ -139,7 +139,7 @@ const Header = () => {
             isOpen={activeDropdown === "services"}
             toggleDropdown={() => toggleDropdown("services")}
             items={[
-              { href: "/services", label: "Services Page" },
+              { href: "/services", label: "Services" },
               { href: "/equipment", label: "Equipment" },
             ]}
             toggleMobileMenu={toggleMobileMenu}
