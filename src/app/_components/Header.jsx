@@ -4,11 +4,12 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 
 const Header = () => {
   const [isSticky, setSticky] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const mobileMenuRef = useRef(null);
 
   const handleScroll = () => {
@@ -30,6 +31,7 @@ const Header = () => {
         !mobileMenuRef.current.contains(event.target)
       ) {
         setIsMobileMenuOpen(false);
+        setActiveDropdown(null);
       }
     };
 
@@ -41,6 +43,11 @@ const Header = () => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+    setActiveDropdown(null);
+  };
+
+  const toggleDropdown = (dropdown) => {
+    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
   };
 
   return (
@@ -61,18 +68,34 @@ const Header = () => {
           <Link href="/">
             <span className="flex items-center">
               <Image src="/logo.png" alt="logo" width={50} height={50} />
-              <span className="self-center text-base lg:text-xl font-semibold whitespace-nowrap  ml-2">
-                Desire Div
+              <span className="self-center text-base lg:text-xl font-semibold whitespace-nowrap ml-2">
+                Div
               </span>
             </span>
           </Link>
         </div>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-6">
+        <nav className="hidden md:flex space-x-6 relative">
           <NavLink href="/">Home</NavLink>
-          <NavLink href="/about">About</NavLink>
-          <NavLink href="/services">Services</NavLink>
+          <DesktopDropdown
+            title="About"
+            isOpen={activeDropdown === "about"}
+            toggleDropdown={() => toggleDropdown("about")}
+            items={[
+              { href: "/about", label: "About Page" },
+              { href: "/faq", label: "FAQ" },
+            ]}
+          />
+          <DesktopDropdown
+            title="Services"
+            isOpen={activeDropdown === "services"}
+            toggleDropdown={() => toggleDropdown("services")}
+            items={[
+              { href: "/services", label: "Services Page" },
+              { href: "/equipment", label: "Equipment" },
+            ]}
+          />
           <NavLink href="/contact">Contact</NavLink>
         </nav>
 
@@ -93,20 +116,34 @@ const Header = () => {
       {/* Mobile Menu */}
       <div
         ref={mobileMenuRef}
-        className={`md:hidden bg-[#2a2a2a] border-t border-gray-700 overflow-hidden transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen ? "max-h-96" : "max-h-0"
+        className={`md:hidden bg-[#1A2126] border-t border-gray-700 overflow-hidden transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen ? "max-h-screen" : "max-h-0"
         }`}
       >
         <nav className="flex flex-col space-y-4 p-4">
           <NavLinkMobile href="/" toggleMobileMenu={toggleMobileMenu}>
             Home
           </NavLinkMobile>
-          <NavLinkMobile href="/about" toggleMobileMenu={toggleMobileMenu}>
-            About
-          </NavLinkMobile>
-          <NavLinkMobile href="/services" toggleMobileMenu={toggleMobileMenu}>
-            Services
-          </NavLinkMobile>
+          <MobileDropdown
+            title="About"
+            isOpen={activeDropdown === "about"}
+            toggleDropdown={() => toggleDropdown("about")}
+            items={[
+              { href: "/about", label: "About Page" },
+              { href: "/faq", label: "FAQ" },
+            ]}
+            toggleMobileMenu={toggleMobileMenu}
+          />
+          <MobileDropdown
+            title="Services"
+            isOpen={activeDropdown === "services"}
+            toggleDropdown={() => toggleDropdown("services")}
+            items={[
+              { href: "/services", label: "Services Page" },
+              { href: "/equipment", label: "Equipment" },
+            ]}
+            toggleMobileMenu={toggleMobileMenu}
+          />
           <NavLinkMobile href="/contact" toggleMobileMenu={toggleMobileMenu}>
             Contact
           </NavLinkMobile>
@@ -119,14 +156,67 @@ const Header = () => {
   );
 };
 
-export default Header;
-
 // Desktop NavLink
 function NavLink({ href, children }) {
   return (
     <Link href={href} className="hover:text-gray-400">
       {children}
     </Link>
+  );
+}
+
+// Desktop Dropdown
+function DesktopDropdown({ title, isOpen, toggleDropdown, items }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const timeoutRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    clearTimeout(timeoutRef.current);
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsHovered(false);
+    }, 300); // 300ms delay
+  };
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      className="relative group"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <button
+        onClick={toggleDropdown}
+        className="flex items-center hover:text-gray-400 focus:outline-none"
+      >
+        {title} <FaChevronDown className="ml-1" />
+      </button>
+      <div
+        className={`absolute left-0 mt-2 w-48 bg-[#1A2126] text-white rounded-md shadow-lg z-10 overflow-hidden transition-opacity duration-300 ${
+          isOpen || isHovered ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {items.map((item, index) => (
+          <Link
+            key={index}
+            href={item.href}
+            className="block px-4 py-2 hover:bg-[#2A363F] transition-colors duration-200"
+          >
+            {item.label}
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -142,3 +232,44 @@ function NavLinkMobile({ href, children, toggleMobileMenu }) {
     </Link>
   );
 }
+
+// Mobile Dropdown
+function MobileDropdown({
+  title,
+  isOpen,
+  toggleDropdown,
+  items,
+  toggleMobileMenu,
+}) {
+  return (
+    <div className="relative">
+      <button
+        onClick={toggleDropdown}
+        className="flex items-center justify-between w-full py-2 hover:text-gray-400 focus:outline-none"
+      >
+        {title}{" "}
+        <FaChevronDown
+          className={`ml-1 transition-transform duration-200 ${
+            isOpen ? "transform rotate-180" : ""
+          }`}
+        />
+      </button>
+      {isOpen && (
+        <div className="mt-2 ml-4 space-y-2">
+          {items.map((item, index) => (
+            <Link
+              key={index}
+              href={item.href}
+              onClick={toggleMobileMenu}
+              className="block hover:bg-[#2A363F] py-1 px-2 rounded transition-colors duration-200"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default Header;
