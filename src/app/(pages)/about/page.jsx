@@ -1,11 +1,13 @@
+import AboutPage from "@/app/_components/AboutPage";
 import React from "react";
 
 export const metadata = {
-  title: "About",
-  description: "About us",
-};
-const AboutPage = () => {
-  return <div></div>;
+  title: "About - Construction",
+  description: "About us page for Construction website",
 };
 
-export default AboutPage;
+const About = () => {
+  return <AboutPage />;
+};
+
+export default About;
