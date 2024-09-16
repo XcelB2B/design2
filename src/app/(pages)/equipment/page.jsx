@@ -1,11 +1,12 @@
+import EquipmentPage from "@/app/_components/EquipmentPage";
 import React from "react";
 
 export const metadata = {
-  title: "Equipment",
-  description: "Equipment we use",
+  title: "Equipment - Construction",
+  description: "Equipment we use for Construction website",
 };
-const EquipmentPage = () => {
-  return <div></div>;
+const Equipment = () => {
+  return <EquipmentPage />;
 };
 
-export default EquipmentPage;
+export default Equipment;

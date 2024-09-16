@@ -1,11 +1,12 @@
+import ContactPage from "@/app/_components/ContactPage";
 import React from "react";
 
 export const metadata = {
-  title: "Contact",
-  description: "Contact us",
+  title: "Contact - Construction",
+  description: "Contact us page for Construction website",
 };
-const ContactPage = () => {
-  return <div></div>;
+const Contact = () => {
+  return <ContactPage />;
 };
 
-export default ContactPage;
+export default Contact;
