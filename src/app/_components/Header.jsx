@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -57,7 +58,14 @@ const Header = () => {
       >
         {/* Logo */}
         <div className="text-2xl font-bold">
-          <Link href="/">Hello Me</Link>
+          <Link href="/">
+            <span className="flex items-center">
+              <Image src="/logo.png" alt="logo" width={50} height={50} />
+              <span className="self-center text-base lg:text-xl font-semibold whitespace-nowrap  ml-2">
+                Desire Div
+              </span>
+            </span>
+          </Link>
         </div>
 
         {/* Desktop Menu */}
