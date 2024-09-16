@@ -61,7 +61,7 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-neutral-100">
-      <main className="container mx-auto px-4 py-12 space-y-24">
+      <main className="container mx-auto px-4 py-12 space-y-24 ">
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -82,7 +82,7 @@ export default function ServicesPage() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:max-w-screen-xl mx-auto"
         >
           {services.map((service, index) => (
             <motion.div
@@ -164,7 +164,7 @@ export default function ServicesPage() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="text-center space-y-8 bg-neutral-200 p-12 rounded-lg"
+          className="text-center space-y-8 bg-neutral-200 p-12 rounded-lg lg:max-w-screen-xl mx-auto"
         >
           <h2 className="text-3xl font-bold text-gray-900">
             Ready to Start Your Project?
