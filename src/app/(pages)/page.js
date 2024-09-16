@@ -1,3 +1,4 @@
+import Accordion from "../_components/Accordion";
 import GetQuotes from "../_components/GetQuotes";
 import HeroSection from "../_components/HeroSection";
 import HowItWorks from "../_components/HowItWorks";
@@ -14,6 +15,7 @@ export default function Home() {
       <GetQuotes />
       <WhatWeOffer />
       <StoryOfClient />
+      <Accordion count={4} />
     </>
   );
 }
