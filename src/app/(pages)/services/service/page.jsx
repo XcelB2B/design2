@@ -83,7 +83,7 @@ const Service = () => {
               ></path>
               <path d="M0 0h24v24H0z" fill="none"></path>
             </svg>
-            <span className="ml-1">John Doe</span>
+            <span className="ml-1">Akash Sachan</span>
           </a>
         </div>
         <hr />
@@ -101,19 +101,19 @@ const Service = () => {
             <p className="text-gray-900 font-semibold">
               Email:{" "}
               <a
-                href="mailto:info@premierconstruction.com"
+                href="mailto:hello@desirediv.com"
                 className="text-yellow-600 hover:underline"
               >
-                info@premierconstruction.com
+                hello@desirediv.com
               </a>
             </p>
             <p className="text-gray-900 font-semibold">
               Phone:{" "}
               <a
-                href="tel:+1234567890"
+                href="tel:+919871228880"
                 className="text-yellow-600 hover:underline"
               >
-                +123-456-7890
+                +91 9871228880
               </a>
             </p>
           </div>

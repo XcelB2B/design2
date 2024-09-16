@@ -14,7 +14,12 @@ export default function ContactPage() {
           transition={{ duration: 0.8 }}
           className="text-center space-y-6"
         >
-          <h2 className="text-3xl font-bold text-gray-900">Get in Touch</h2>
+          <h2
+            initial="hidden"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-3 mt-7 text-gray-900"
+          >
+            <span className="text-yellow-500">Get </span> in Touch
+          </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Have questions or ready to start your project? We&apos;re here to
             help. Reach out to us and let&apos;s bring your construction vision

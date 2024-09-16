@@ -80,8 +80,11 @@ export default function EquipmentPage() {
           transition={{ duration: 0.8 }}
           className="text-center space-y-6"
         >
-          <h2 className="text-3xl font-bold text-gray-900">
-            State-of-the-Art Construction Equipment
+          <h2
+            initial="hidden"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-3 mt-7 text-gray-900"
+          >
+            <span className="text-yellow-500">Equipment</span> Rental
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We offer a wide range of high-quality construction equipment for

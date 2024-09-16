@@ -42,6 +42,26 @@ const faqData = [
     answer:
       "We understand that changes may be necessary during construction. We have a formal change order process in place to document and approve any modifications. This ensures clear communication and helps manage the project budget and timeline effectively.",
   },
+  {
+    question: "What is your approach to project management?",
+    answer:
+      "Our project management approach is centered on clear communication, detailed planning, and efficient execution. We use advanced project management tools to track progress, manage resources, and ensure timely completion.",
+  },
+  {
+    question: "Do you provide cost estimates before starting a project?",
+    answer:
+      "Yes, we provide detailed cost estimates before starting any project. Our estimates include all aspects of the project, from materials and labor to permits and inspections, ensuring transparency and helping you plan your budget effectively.",
+  },
+  {
+    question: "How do you ensure the quality of your construction work?",
+    answer:
+      "We ensure the quality of our construction work through rigorous quality control measures, including regular inspections, adherence to industry standards, and the use of high-quality materials. Our experienced team is committed to delivering exceptional results.",
+  },
+  {
+    question: "Can you provide references from past clients?",
+    answer:
+      "Yes, we can provide references from past clients who can speak to the quality of our work and our commitment to customer satisfaction. We take pride in our positive relationships with clients and our track record of successful projects.",
+  },
 ];
 
 const FAQAccordion = ({ count }) => {

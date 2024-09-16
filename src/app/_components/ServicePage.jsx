@@ -68,9 +68,13 @@ export default function ServicesPage() {
           transition={{ duration: 0.8 }}
           className="text-center space-y-6"
         >
-          <h2 className="text-3xl font-bold text-gray-900">
-            Comprehensive Construction Solutions
+          <h2
+            initial="hidden"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-3 mt-7 text-gray-900"
+          >
+            <span className="text-yellow-500">Service </span> Offerings
           </h2>
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             From concept to completion, we offer a wide range of construction
             services tailored to your needs. Our expert team ensures quality,
