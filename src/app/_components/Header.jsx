@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
+import AppointmentDialog from "./AppointmentDialog";
 
 const Header = () => {
   const [isSticky, setSticky] = useState(false);
@@ -100,9 +101,9 @@ const Header = () => {
         </nav>
 
         {/* Appointment Button */}
-        <Button className="hidden md:flex bg-yellow-500 text-gray-200 px-4 py-2 rounded-full hover:bg-yellow-600 text-lg text-center font-semibold">
-          Appointment
-        </Button>
+        <div className="hidden md:flex">
+          <AppointmentDialog />
+        </div>
 
         {/* Mobile Menu Button */}
         <Button
@@ -147,9 +148,9 @@ const Header = () => {
           <NavLinkMobile href="/contact" toggleMobileMenu={toggleMobileMenu}>
             Contact
           </NavLinkMobile>
-          <Button className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 w-full">
-            Appointment
-          </Button>
+          <div className=" w-full">
+            <AppointmentDialog />
+          </div>
         </nav>
       </div>
     </header>
