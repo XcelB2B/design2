@@ -33,7 +33,7 @@ export default function AboutPage() {
               unwavering commitment to quality, innovation, and customer
               satisfaction.
             </p>
-            <ul className="space-y-2 ">
+            <ul className="space-y-2  ">
               {[
                 "25+ Years of Excellence",
                 "500+ Completed Projects",
@@ -75,7 +75,7 @@ export default function AboutPage() {
           className="text-center space-y-12 lg:max-w-screen-xl mx-auto"
         >
           <h2 className="text-3xl font-bold text-gray-900">Our Core Values</h2>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-4 gap-8 ">
             {[
               {
                 icon: Award,
@@ -126,7 +126,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-yellow-600 transform -skew-y-3"></div>
           <div className="relative z-10 text-white text-center space-y-8">
             <h2 className="text-3xl font-bold">Our Achievements</h2>
-            <div className="grid md:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-4 gap-8 lg:max-w-screen-xl mx-auto">
               {[
                 { number: "500+", label: "Projects Completed" },
                 { number: "50+", label: "Awards Won" },

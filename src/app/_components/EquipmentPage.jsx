@@ -73,7 +73,7 @@ const equipmentList = [
 export default function EquipmentPage() {
   return (
     <div className="min-h-screen bg-white">
-      <main className="container mx-auto px-4 py-12 space-y-24">
+      <main className="container mx-auto md:px-0 px-4 py-12 space-y-24">
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -145,11 +145,11 @@ export default function EquipmentPage() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="bg-yellow-600 text-white py-16 rounded-lg lg:max-w-screen-xl mx-auto"
+          className="bg-yellow-600 text-white py-16"
         >
           <div className="container mx-auto px-4 md:px-10 text-center space-y-12">
             <h2 className="text-3xl font-bold">Why Rent from ConstructCo?</h2>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 lg:max-w-screen-xl mx-auto">
               {[
                 {
                   icon: FaTruck,

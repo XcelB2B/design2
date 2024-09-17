@@ -61,7 +61,7 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <main className="container mx-auto px-4 py-12 space-y-24 ">
+      <main className="container mx-auto  md:px-0 px-4  py-12 space-y-24 ">
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -130,23 +130,26 @@ export default function ServicesPage() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="bg-yellow-600 text-white py-16 rounded-lg lg:max-w-screen-xl mx-auto"
+          className="bg-yellow-600 text-white py-16 "
         >
           <div className="container mx-auto px-4 md:px-10 text-center space-y-8">
             <h2 className="text-3xl font-bold">Why Choose ConstructCo?</h2>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 lg:max-w-screen-xl mx-auto">
               {[
                 {
                   title: "Expert Team",
-                  description: "Skilled professionals with years of experience",
+                  description:
+                    "Our team consists of skilled professionals with years of experience in the construction industry. ",
                 },
                 {
                   title: "Quality Assurance",
-                  description: "Rigorous quality control at every stage",
+                  description:
+                    "We implement rigorous quality control measures at every stage of the construction process. ",
                 },
                 {
                   title: "Timely Delivery",
-                  description: "We respect deadlines and deliver on time",
+                  description:
+                    "We understand the importance of meeting deadlines and delivering projects on time. ",
                 },
               ].map((item, index) => (
                 <motion.div
@@ -154,7 +157,7 @@ export default function ServicesPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                  className="bg-white text-gray-900 p-6 rounded-lg shadow-xl"
+                  className="bg-white text-gray-900 p-10 rounded-lg shadow-xl"
                 >
                   <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                   <p>{item.description}</p>
