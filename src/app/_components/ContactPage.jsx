@@ -6,7 +6,7 @@ import Form from "./Form";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-neutral-100">
+    <div className="min-h-screen bg-white">
       <main className="container mx-auto px-4 py-12 space-y-24 ">
         <motion.section
           initial={{ opacity: 0, y: 50 }}

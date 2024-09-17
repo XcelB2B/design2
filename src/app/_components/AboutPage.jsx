@@ -6,13 +6,15 @@ import Image from "next/image";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-neutral-100">
-      <h2
-        initial="hidden"
+    <div className="min-h-screen bg-white">
+      <motion.h2
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
         className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center my-8 text-gray-900"
       >
         <span className="text-yellow-500">About </span> Us
-      </h2>
+      </motion.h2>
       <main className="container mx-auto  py-12 space-y-24">
         <motion.section
           initial={{ opacity: 0, y: 50 }}
